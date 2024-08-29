@@ -1,0 +1,36 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '2.7.18'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+
+apply plugin: 'io.spring.dependency-management'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compileOnly "org.projectlombok:lombok"
+    annotationProcessor "org.projectlombok:lombok"
+    //implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+  	implementation 'org.springframework.boot:spring-boot-starter-activemq'
+    implementation 'org.springframework.boot:spring-boot-starter-jta-atomikos'
+    
+    //implementation 'org.liquibase:liquibase-core:4.29+'
+	//implementation 'org.yaml:snakeyaml:2.2+'
+    
+    //untimeOnly 'org.postgresql:postgresql'
+    //runtimeOnly 'com.oracle.database.jdbc:ojdbc11'
+    
+    //testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    //testImplementation 'org.testcontainers:postgresql'
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.10.3'
+}
+
+test {
+    useJUnitPlatform()
+}
